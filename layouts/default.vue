@@ -42,15 +42,17 @@ export default {
       },
       showLoginModal: false,
       userLog: {email: '', password: ''},
-      userUID: '',
-      loading: false,
+      userUID: ''
+    }
+  },
+  computed: {
+    loading: {
+      get () {
+        return this.$store.getters.loading
+      }
     }
   },
   mounted () {
-    this.$on('loading', (loading) => {
-      console.log("taking modal : " + loading)
-      this.loading = loading
-    })
   },
   components : {
     upperBar,

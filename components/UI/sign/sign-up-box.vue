@@ -1,12 +1,13 @@
 <template>
    <div class="sign-box">
     <h1 style="font-weight:100;">Join Football Lens!</h1>
-    <input-field class="login-form" label="email" v-model="userSignUp.email"></input-field>
-    <input-field class="login-form" type="password" label="password" v-model="userSignUp.password"></input-field>
-    <input-field class="login-form" type="password" label="password_confirm" v-model="passwordConfirm"></input-field>
-    <input-field class="login-form" label="name" v-model="userSignUp.userName"></input-field>
-    <input-field class="login-form" label="phone_number" v-model="userSignUp.phoneNum"></input-field>
-    <button class="sign-btn" @click="signUp(userSignUp)">Sign UP</button>
+    <input-field label="email" v-model="userSignUp.email"></input-field>
+    <input-field type="password" label="password" v-model="userSignUp.password"></input-field>
+    <input-field type="password" label="password_confirm" :class="{check: checkPw(userSignUp.password, passwordConfirm)}" v-model="passwordConfirm"></input-field>
+    <input-field label="name" v-model="userSignUp.userName"></input-field>
+    <input-field label="phone_number" v-model="userSignUp.phoneNum"></input-field>
+    <button class="sign-btn" @click="signUp()">Sign UP</button>
+    {{userSignUp}}
   </div>
 </template>
 
@@ -21,8 +22,27 @@ export default {
     }
   },
   methods : {
+    checkForm () {
+      if (this.checkPw(this.userSignUp.password == this.passwordConfirm)){
+        return true
+      }else {
+        return false
+      }
+    },
     signUp () {
-      // this.$emit('signIn', this.userSignIn)
+      console.log(this.checkPw())
+      if (this.checkForm()){
+
+      }else {
+        alert("check your form")
+      }
+    },
+    checkPw(password, passwordConfirm) {
+      if (password == passwordConfirm) {
+        return false
+      }else {
+        return true
+      }
     }
   },
   components : {
@@ -49,5 +69,9 @@ export default {
   padding: 10px 0px;
   outline: none;
   border: none;
+  cursor: pointer;
+}
+.sign-box .check{
+  color: red;
 }
 </style>

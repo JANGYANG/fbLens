@@ -4,6 +4,12 @@
   "description": "Broken Glasses",
   "author": "007",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -15,13 +21,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "jquery": "^3.3.1",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.4.0",
+    "vue-session": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "eslint": "^4.18.2",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.3.0"
   }
 }

@@ -2,9 +2,10 @@ import Vuex from 'vuex'
 
 const store = () => new Vuex.Store({
   state: {
-    login: false,
+    user: {login: false,
     userUID: '',
-    teamUID: ''
+    teamUID: ''},
+    loading: false
   },
   mutations: {
     setup (state, user) {
@@ -15,6 +16,14 @@ const store = () => new Vuex.Store({
     },
     signUp (state, user) {
 
+    },
+    loading (state, loadingState) {
+      state.loading = loadingState
+    }
+  },
+  getters: {
+    loading: (state) => {
+      return state.loading
     }
   }
 })
