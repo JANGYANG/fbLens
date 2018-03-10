@@ -4,10 +4,10 @@
 
  
   <div class="pop-up-btn" @click="resultBar = !resultBar">
-
-    <i class="fa md-18 darkcyan" :class="iconClass()" ></i>
-    <h1>Result</h1>
-    <i class="fa md-18 darkcyan" :class="iconClass()"></i>
+    
+    <img src="/up.svg" style="width:18px" class="result-icon">
+    RESULT
+    
   </div>
   <div class="result-con" :class="{activate: resultBar}">
     ResultList
@@ -43,36 +43,42 @@ export default {
   position: absolute;
   right: 0px;
   width: 240px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 .pop-up-btn {
   width: 100%;
-  background: lightgrey;
+  border-bottom: 2px solid #297FC9;
+  background: #E4F1FD;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  min-height: 80px;
-  max-height: 80px;
+  height: 64px;
+  min-height: 64px;
+  max-height: 64px;
   cursor: pointer;
-}
-.pop-up-btn h1, i {
-  color: white;
+  font-size: 13px;
+  font-weight: 100;
+  color: #297FC9;
 }
 .right-side-con .result-con {
   transform: scale(0, 1);
   transform-origin: 0 1;
   width: 100%;
   height: 0;
-  background: lightcyan;
+  background: #E4F1FD;
   transition: height 2s;
 }
 .right-side-con .result-con.activate {
   height: 100%;
   transition: height 2s;
   transform: scale(1, 1);
+}
+.result-icon{
+  width: 18px;
+  position: absolute;
+  left: 15px;
 }
 </style>

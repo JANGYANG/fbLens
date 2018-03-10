@@ -114,6 +114,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   height: 100%;
+  background: linear-gradient(to bottom right, #297FC9, #295AC9);;
 }
 
 *, *:before, *:after {
@@ -150,25 +151,28 @@ html {
   background-color: #35495e;
 }
 .contentBox{
+  display: block;
   position: absolute;
   z-index: 1;
-  padding-top: 80px;
-  margin-left: 80px;
-  margin-right: 80px;
+  /*margin: auto;*/
+  /*padding-top: 80px;*/
+  /*margin-left: 80px;*/
+  /*margin-right: 80px;*/
 }
 .flLogo {
-  padding-left: 10px;
   z-index: 4;
   position: absolute;
   display: flex;
+  
   align-items: center;
   margin: 0 0 0 0;
-  width: 200px;
-  height: 80px;
-  background-color: lightblue;
+  padding-left: 23px;
+  width: 195px;
+  height: 62px;
+  background-color: #E4F1FD;
 }
 .flLogo h1{
-  color:white;
+  color: #297FC9;
   font-size: 20px;
 }
 </style>

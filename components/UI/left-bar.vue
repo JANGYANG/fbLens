@@ -2,6 +2,7 @@
 <div class="left-bar-con" >
   <div class="left-bar">
     <img  v-if="user" class="profileImg" src="~~/assets/img/12-30-2.jpg">
+    <img v-else src="/mypage.svg" style="width:15px;">
     <!-- <button v-else id="show-modal" @click="$emit('showLoginModal')">LOGIN</button> -->
     <div class="my-page-title">
         <h5>My PAGE</h5>
@@ -11,10 +12,9 @@
         <p>&#169;BrokenGlassesCorp.</p>
       </div>
       <div class="bg-sns">
-        <i class="material-icons md-18 darkcyan">email</i>
-        <i class="fa fa-instagram  md-18 darkcyan"></i>
-        <i class="fa fa-facebook-square md-18 darkcyan"></i>
-        <i class="fa fa-twitter md-18 darkcyan"></i>
+        <img style="width:12px;" src="/mail.svg"/>
+        <img style="width:12px;" src="/instagram.svg"/>
+        <img style="width:12px;" src="/facebook.svg"/>
       </div>
     </div>
   </div>
@@ -75,17 +75,18 @@ export default {
 .left-bar-con{
   position: fixed;
   z-index: 2;
-  width: 80px;
+  width: 62px;
   display: flex;
   align-items: center;
-  /* height: 1200px; */
-  background-color: lightblue;
+  height: 100%;
+  
+  background-color: #E4F1FD;
   top: 0;
   left: 0;
   transition : width 0.4s ease-in-out;
 }
 .left-bar-con:hover{
-  width:200px;
+  width: 195px;
   transition : width 0.4s ease-in-out;
 }
 .left-bar-con.modal{
@@ -93,12 +94,13 @@ export default {
 }
 .left-bar {
   padding: 80px 0px 20px 0px;
+  width: inherit;
   display: flex;
   flex-direction: column;
-  width: 80px;
+  align-items: center;
   max-height: 800px;
   height: 100vh;
-  background-color: lightblue;
+  background-color: #E4F1FD;
 }
 .profileImg {
   width: 80px;
@@ -113,46 +115,48 @@ export default {
   justify-content: center;
 }
 .my-page-title h5{
-  color: darkcyan;
+  position: absolute;
+  right: 3px;
+  font-weight: 100;
+  bottom: 50%;
+  color: #297FC9;
   -ms-transform: rotate(-90deg); /* IE 9 */
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
 .bg-info{
   text-align : center;
-  display: flex;
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content:flex-end;
 }
 .bg-info .bg-name {
   flex-grow: 1;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  
 }
 .bg-info .bg-name p {
-  color: darkcyan;
-  padding-bottom:30px;
+  color: #989898;
   font-size: 5px;
   -ms-transform: rotate(-90deg); /* IE 9 */
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
 .bg-info .bg-sns {
-  flex-grow: 2;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
 }
-.bg-info .bg-sns i {
-  margin-bottom: 7px;
-  flex-grow: 1 0;
+.bg-info .bg-sns img{
+  margin-top: 7px;
 }
 .fa.material-icons.md-18 { font-size: 18px; }
-.fa.darkcyan { color: darkcyan; }
+.fa.darkcyan { color: #297FC9; }
 .material-icons.md-18 { font-size: 18px; }
-.material-icons.darkcyan { color: darkcyan; }
+.material-icons.darkcyan { color: #297FC9; }
 </style>

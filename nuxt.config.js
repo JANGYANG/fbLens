@@ -14,7 +14,8 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato'},
+      { rel: "stylesheet", href: 'https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css'}
     ],
     script: [
       { src: "//developers.kakao.com/sdk/js/kakao.min.js" },

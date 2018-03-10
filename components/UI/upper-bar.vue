@@ -2,7 +2,8 @@
 <nav class="upper-bar-con">
   <div class="main-menu">
     <div class="search-bar">
-      <input-field></input-field>
+      <img style="width:13px;height;13px;right:-15px;" src="~/assets/img/search.svg"/>
+      <input-field style="display:flex"></input-field>
     </div>
     <div class="menu-a">
         <nuxt-link class="menu" v-for="(menu, idx) in menus" :key="idx" :class="{active: active(idx)}" :to="menu.url">
@@ -66,16 +67,16 @@ export default {
 .upper-bar-con {
   position: absolute;
   z-index: 3;
-  padding : 0px 240px 0px 200px;
+  padding : 0px 240px 0px 195px;
   width: 100%;
-  height: 80px;
+  height: 62px;
   display: flex;
   flex-direction: row;
-  background-color : #ecf0f1;
+  background-color : #FFFFFF;
 }
 .main-menu .logo-bar {
   padding : 0px 10px 0px 10px;
-  width: 210px;
+  width: 195px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,8 +86,10 @@ export default {
 .upper-bar-con .main-menu {
   width: 100%;
   display: flex;
+  background-color: white;
 }
 .upper-bar-con .main-menu .search-bar {
+  margin-left: 15px;
   display: flex;
   align-items: center;
 }
@@ -101,27 +104,32 @@ export default {
   flex-direction: row;
   align-items: center;
   flex-grow: 5;
+  padding-left: 20px;
   padding-top: 5px;
   justify-content: space-around;
 }
 .main-menu .menu-a .menu{
+  width: inherit;
   text-align: center;
   height: 100%;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: cubic-bezier(1, 0, 0, 1);
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 3px solid #FFFFFF;
   text-decoration: none;
-  color: #bdc3c7;
+  color: #989898;
 }
 .main-menu .menu-a .menu.active{
   transition: cubic-bezier(1, 0, 0, 1);
-  border-bottom: 2px solid #3498db;
+  border-bottom: 3px solid #3FA9F5;
+  color: #3FA9F5;
 }
 .menu .menubtn {
   height: 100px;
+  min-width: 135px;
+  max-width: 135px;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;

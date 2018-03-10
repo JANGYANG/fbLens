@@ -77,7 +77,7 @@ export default {
 .input-box::after {
   content: '';
   position: absolute;
-  bottom: -1px;
+  bottom: -5px;
   width: 0;
   transition: 0.3s;
   transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
