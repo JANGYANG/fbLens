@@ -3,11 +3,11 @@
   <sign-con :resultBar="resultBar" v-show="!$store.state.login"></sign-con>
 
  
-  <div class="pop-up-btn" @click="resultBar = !resultBar">
-    
+  <div class="pop-up-con" @click="resultBar = !resultBar">
+    <div class="pop-up-btn">
     <img src="/up.svg" style="width:18px" class="result-icon">
     RESULT
-    
+    </div>
   </div>
   <div class="result-con" :class="{activate: resultBar}">
     ResultList
@@ -38,9 +38,7 @@ export default {
 <style>
 .right-side-con {
   position: fixed;
-  top: 0px;
   z-index:5;
-  position: absolute;
   right: 0px;
   width: 240px;
   height: 100%;
@@ -48,17 +46,24 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
 }
-.pop-up-btn {
+.pop-up-con {
   width: 100%;
-  border-bottom: 2px solid #297FC9;
   background: #E4F1FD;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 64px;
   min-height: 64px;
   max-height: 64px;
   cursor: pointer;
+  color: #297FC9;
+}
+.pop-up-con .pop-up-btn{
+  width: 90%;
+  height: 100%;
+  border-bottom: 2px solid #297FC9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 13px;
   font-weight: 100;
   color: #297FC9;

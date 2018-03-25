@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -48,7 +49,5 @@ module.exports = {
         })
       }
     },
-    vendor: ['axios'],
-    vendor: ['vue-session']
-  }
+  },
 }

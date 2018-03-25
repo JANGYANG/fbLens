@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6, p, span, button, input, div {
   font-family: 'Lato', 'nanumsquare', sans-serif;
 }
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 .page-enter, .page-leave-to {
   opacity: 0;

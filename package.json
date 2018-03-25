@@ -22,7 +22,8 @@
     "axios": "^0.18.0",
     "jquery": "^3.3.1",
     "nuxt": "^1.4.0",
-    "vue-session": "^1.0.0"
+    "swiper": "^4.2.0",
+    "vuex-persist": "^1.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

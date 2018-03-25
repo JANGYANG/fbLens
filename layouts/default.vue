@@ -6,8 +6,6 @@
       <input-field style="padding:0px 2px;" label="email" slot="body" v-model="userLog.email"></input-field>
       <input-field style="padding:0px 2px;" label="password" slot="body" v-model="userLog.password"></input-field>
     </modal>
-    <div class="flLogo">
-      <h1>FootBall LENS</h1></div>
     <upper-bar/>
     <left-bar @showLoginModal="showLoginModal = true"/>
 
@@ -158,21 +156,5 @@ html {
   /*padding-top: 80px;*/
   /*margin-left: 80px;*/
   /*margin-right: 80px;*/
-}
-.flLogo {
-  z-index: 4;
-  position: absolute;
-  display: flex;
-  
-  align-items: center;
-  margin: 0 0 0 0;
-  padding-left: 23px;
-  width: 195px;
-  height: 62px;
-  background-color: #E4F1FD;
-}
-.flLogo h1{
-  color: #297FC9;
-  font-size: 20px;
 }
 </style>

@@ -12,9 +12,9 @@
         <p>&#169;BrokenGlassesCorp.</p>
       </div>
       <div class="bg-sns">
-        <img style="width:12px;" src="/mail.svg"/>
-        <img style="width:12px;" src="/instagram.svg"/>
-        <img style="width:12px;" src="/facebook.svg"/>
+        <img  src="/mail.svg"/><br>
+        <img  src="/instagram.svg"/><br>
+        <img  src="/facebook.svg"/>
       </div>
     </div>
   </div>
@@ -75,7 +75,7 @@ export default {
 .left-bar-con{
   position: fixed;
   z-index: 2;
-  width: 62px;
+  width: 60px;
   display: flex;
   align-items: center;
   height: 100%;
@@ -93,7 +93,8 @@ export default {
   z-index: 4;
 }
 .left-bar {
-  padding: 80px 0px 20px 0px;
+  padding: 62px 0px 0px 0px;
+  position: relative;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -108,15 +109,12 @@ export default {
   opacity: 0.5;
 }
 .my-page-title {
-  flex-grow: 4;
-  text-align: center;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-grow: 3;
+  width: 100%;
+  position: relative;
 }
 .my-page-title h5{
   position: absolute;
-  right: 3px;
   font-weight: 100;
   bottom: 50%;
   color: #297FC9;
@@ -125,20 +123,19 @@ export default {
   transform: rotate(-90deg);
 }
 .bg-info{
-  text-align : center;
-  flex-grow: 2;
   display: flex;
+  flex-grow: 1;
+  width: 100%;
   flex-direction: column;
-  justify-content:flex-end;
 }
 .bg-info .bg-name {
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  position: relative;
 }
 .bg-info .bg-name p {
+  position: absolute;
+  left: -20.5px;
+  bottom: 80px;
   color: #989898;
   font-size: 5px;
   -ms-transform: rotate(-90deg); /* IE 9 */
@@ -146,17 +143,12 @@ export default {
   transform: rotate(-90deg);
 }
 .bg-info .bg-sns {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
+  min-height: 64px;
+  position: relative;
 }
 .bg-info .bg-sns img{
-  margin-top: 7px;
+  left: 23px;
+  position:absolute;
+  width: 12px;
 }
-.fa.material-icons.md-18 { font-size: 18px; }
-.fa.darkcyan { color: #297FC9; }
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.darkcyan { color: #297FC9; }
 </style>
