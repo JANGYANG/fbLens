@@ -30,7 +30,7 @@ export default {
 
 <style>
 .intro-content{
-  margin: 60px 0px 0px 60px;
+  padding: 60px 0px 0px 60px;
   width: 100%;
   height: 100%;
 }

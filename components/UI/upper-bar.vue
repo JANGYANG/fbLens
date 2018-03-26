@@ -95,6 +95,7 @@ export default {
   background-color: white;
 }
 .upper-bar-con .main-menu .search-bar {
+  min-width: 230px;
   padding-left: 15px;
   padding-right: 20px;
   display: flex;
