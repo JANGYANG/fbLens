@@ -1,10 +1,9 @@
 <template>
   <div class="sign-box">
-    <h1 style="font-weight:100;">Let's Football Lens!</h1>
-    <input-field class="login-form" label="email" v-model="userSignIn.email"></input-field>
-    <input-field type="password" class="login-form" label="password" v-model="userSignIn.password"></input-field>
+    <h1>Let's Football Lens!</h1>
+    <input-field color="#FFFF" class="login-form" label="email" v-model="userSignIn.email"></input-field>
+    <input-field color="#FFFF" type="password" class="login-form" label="password" v-model="userSignIn.password"></input-field>
     <button class="sign-btn" @click="signIn()">Sign In</button>
-    <button class="sign-btn" @click="sessionTest()">session</button>
   </div>
 </template>
 
@@ -23,10 +22,6 @@ export default {
 
       this.$store.commit('loading', true)
       // this.$emit('signIn', this.userSignIn)
-    },
-    sessionTest () {
-      this.$session.start()
-      this.$session.set('test','yoho')
     }
   },
   components : {
@@ -45,14 +40,18 @@ export default {
 }
 .sign-box h1{
   text-align: center;
+  font-weight:100;
+  color: white;
 }
 .sign-btn{
-  background: teal;
+  background: inherit;
+  border: 1px solid #FFFF;
+  color: white;
   width:90%;
+  height: 35px;
   margin-top: 10px;
   padding: 10px 0px;
   outline: none;
-  border: none;
   cursor: pointer;
 }
 </style>

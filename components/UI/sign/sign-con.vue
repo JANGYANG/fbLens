@@ -3,10 +3,10 @@
     <div class="sign-select-con">
       <div class="sign-select-box">
         <div>
-          <button  @click="signInSgn = true">sign in</button>
+          <button :class="{active: signInSgn}" @click="signInSgn = true">Sign in</button>
         </div>
         <div>
-          <button  @click="signInSgn = false">sign up</button>
+          <button :class="{active: !signInSgn}" @click="signInSgn = false">Sign up</button>
         </div>
       </div>
       <div class="nav-underline" :class="{active: !signInSgn}"></div>
@@ -54,7 +54,7 @@ export default {
   transition: all .3s ease-in-out;
 }
 .sign-con.activate{
-  border-left: cyan 1px solid;
+  border-left: #FFFF 1px solid;
   margin-top: 100px;
   margin-bottom: 20px;
   height: 100%;
@@ -82,10 +82,16 @@ export default {
   padding: 0px;
   width: 100%;
   height: 3em;
+  background-color: inherit;
+  color: white;
+  opacity: 0.5;
   text-decoration: none;
   border: none;
   outline: none;
   cursor: pointer;
+}
+.sign-select-box > div > button.active{
+  opacity: 1;
 }
 .nav-underline {
   position: absolute;
@@ -93,7 +99,7 @@ export default {
   bottom: 0px;
   width: 50%;
   height: 1px;
-  background: #333;
+  background: #FFFF;
   transition: all .3s ease-in-out;
 }
 .nav-underline.active {

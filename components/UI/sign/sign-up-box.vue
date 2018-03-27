@@ -1,11 +1,11 @@
 <template>
    <div class="sign-box">
     <h1 style="font-weight:100;">Join Football Lens!</h1>
-    <input-field label="email" v-model="userSignUp.email"></input-field>
-    <input-field type="password" label="password" v-model="userSignUp.password"></input-field>
-    <input-field type="password" label="password_confirm" :class="{check: checkPw(userSignUp.password, passwordConfirm)}" v-model="passwordConfirm"></input-field>
-    <input-field label="name" v-model="userSignUp.userName"></input-field>
-    <input-field label="phone_number" v-model="userSignUp.phoneNum"></input-field>
+    <input-field color="white" label="email" v-model="userSignUp.email"></input-field>
+    <input-field color="white" type="password" label="password" v-model="userSignUp.password"></input-field>
+    <input-field color="white" type="password" label="password_confirm" :class="{check: checkPw(userSignUp.password, passwordConfirm)}" v-model="passwordConfirm"></input-field>
+    <input-field color="white" label="name" v-model="userSignUp.userName"></input-field>
+    <input-field color="white" label="phone_number" v-model="userSignUp.phoneNum"></input-field>
     <button class="sign-btn" @click="signUp()">Sign UP</button>
     {{userSignUp}}
   </div>
@@ -63,12 +63,13 @@ export default {
   text-align: center;
 }
 .sign-btn{
-  background: teal;
+  background: inherit;
+  color: white;
+  border: 1px solid #FFFF;
   width:90%;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 10px 0px;
   outline: none;
-  border: none;
   cursor: pointer;
 }
 .sign-box .check{

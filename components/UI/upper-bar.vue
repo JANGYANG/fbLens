@@ -6,7 +6,7 @@
   <div class="main-menu">
     <div class="search-bar">
       <img style="width:13px;height;13px;right:-15px;" src="~/assets/img/search.svg"/>
-      <input-field style="display:flex;"></input-field>
+      <input-field color="black" style="display:flex;"></input-field>
     </div>
     <div class="menu-a">
         <nuxt-link class="menu" v-for="(menu, idx) in menus" :key="idx" :class="{active: active(idx)}" :to="menu.url">
