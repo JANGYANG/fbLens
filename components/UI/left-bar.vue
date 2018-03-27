@@ -78,6 +78,7 @@ export default {
   width: 60px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   height: 100%;
   
   background-color: #E4F1FD;
@@ -94,13 +95,12 @@ export default {
 }
 .left-bar {
   padding: 62px 0px 0px 0px;
+  height: 100%;
   position: relative;
   width: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 800px;
-  height: 100vh;
   background-color: #E4F1FD;
 }
 .profileImg {
@@ -124,6 +124,7 @@ export default {
 }
 .bg-info{
   display: flex;
+  justify-content: flex-end;
   flex-grow: 1;
   width: 100%;
   flex-direction: column;
@@ -134,17 +135,17 @@ export default {
 }
 .bg-info .bg-name p {
   position: absolute;
-  left: -20.5px;
+  left: -29px;
   bottom: 80px;
   color: #989898;
-  font-size: 5px;
+  font-size: 12px;
   -ms-transform: rotate(-90deg); /* IE 9 */
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
 .bg-info .bg-sns {
   min-height: 64px;
-  position: relative;
+  padding-bottom: 30px;
 }
 .bg-info .bg-sns img{
   left: 23px;

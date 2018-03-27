@@ -3,16 +3,23 @@
     <h1>Let's Football Lens!</h1>
     <input-field color="#FFFF" class="login-form" label="email" v-model="userSignIn.email"></input-field>
     <input-field color="#FFFF" type="password" class="login-form" label="password" v-model="userSignIn.password"></input-field>
+    <div class="rememberme">
+      <check-box label="Remember Me!" v-model="checked"></check-box>
+    </div>
     <button class="sign-btn" @click="signIn()">Sign In</button>
+    {{checked}}
   </div>
 </template>
 
 <script>
 import inputField from "~/components/UI/form/input-field.vue"
+import checkBox from "@/components/UI/form/check-box"
+
 export default {
   data () {
     return {
       userSignIn : {},
+      checked: false
     }
   },
   methods : {
@@ -25,7 +32,8 @@ export default {
     }
   },
   components : {
-    inputField
+    inputField,
+    checkBox
   }
 }
 </script>
@@ -53,5 +61,11 @@ export default {
   padding: 10px 0px;
   outline: none;
   cursor: pointer;
+}
+.rememberme{
+  margin-left: 20px;
+  width:100%;
+  display:flex;
+  justify-content: flex-start;
 }
 </style>
