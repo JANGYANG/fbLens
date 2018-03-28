@@ -166,12 +166,13 @@ export default {
   height: 10px;
   background: #CCCC;
   opacity: 1;
+  transition : width 0.3s ease;
 }
 .swiper-pagination-bullet-active {
   border-radius: 5px;
 	background: #FFFF;
   width: 70px;
-  height: 10px;
+  transition : width 0.3s ease;
 }
 .custom-swiper-nav{
   position: absolute;

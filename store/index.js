@@ -1,17 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import persist from 'vuex-persist'
+import localStorage from './local-storage'
+import sessionStorage from './session-storage'
 
 Vue.use(Vuex)
 
+const vuexLocal = new persist({
+  storage: window.localStorage,
+  modules: ['localStorage'] //only save user module
+})
+
+const vuexSession = new persist({
+  storage: window.sessionStorage,
+  modules: ['sessionStorage'] //only save user module
+})
+
 export default () => new Vuex.Store({
   state: {
-    user: {
-      login: false,
-      userUID: '',
-      teamUID: ''
-    },
-    loading: false
+    loading: false,
   },
   mutations: {
     setup (state, user) {
@@ -30,17 +37,19 @@ export default () => new Vuex.Store({
     },
     loading (state, loadingState) {
       state.loading = loadingState
-    }
+    },
   },
   getters: {
     loading: (state) => {
       return state.loading
     }
   },
+  modules: {
+    localStorage,
+    sessionStorage
+  },
   plugins: [
-    new persist({
-      storage: window.localStorage,
-      key: 'state'
-    }).plugin
+    vuexLocal.plugin,
+    vuexSession.plugin
   ]
 })

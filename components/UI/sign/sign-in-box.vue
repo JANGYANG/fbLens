@@ -6,6 +6,17 @@
     <div class="rememberme">
       <check-box label="Remember Me!" v-model="checked"></check-box>
     </div>
+    <div class="sns-signin-con">
+      <div class="sns-signin-box" id="naver-signin">
+        
+      </div>
+      <div class="sns-signin-box" id="facebook-signin">
+        
+      </div>
+      <div class="sns-signin-box" id="kakao-signin" @click="tst">
+        
+      </div>
+    </div>
     <button class="sign-btn" @click="signIn()">Sign In</button>
     {{checked}}
   </div>
@@ -29,6 +40,10 @@ export default {
 
       this.$store.commit('loading', true)
       // this.$emit('signIn', this.userSignIn)
+    },
+    tst () {
+      this.$store.state.localStorage.jwt = this.userSignIn.email
+      this.$store.state.sessionStorage.jwt = this.userSignIn.email
     }
   },
   components : {
@@ -67,5 +82,17 @@ export default {
   width:100%;
   display:flex;
   justify-content: flex-start;
+}
+.sns-signin-con{
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.sns-signin-box{
+  flex-grow: 1;
+  margin: 0px 5px;
+  background: none;
+  border: 1px solid white;
 }
 </style>
