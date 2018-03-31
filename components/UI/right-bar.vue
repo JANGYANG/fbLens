@@ -1,6 +1,6 @@
 <template>
 <nav class="right-side-con">
-  <sign-con :resultBar="resultBar" v-show="!$store.state.login"></sign-con>
+  <sign-con :resultBar="resultBar" v-show="!$store.state.sessionStorage.jwt"></sign-con>
 
  
   <div class="pop-up-con" @click="resultBar = !resultBar">
@@ -58,7 +58,7 @@ export default {
   color: #297FC9;
 }
 .pop-up-con .pop-up-btn{
-  width: 90%;
+  width: 100%;
   height: 100%;
   border-bottom: 2px solid #297FC9;
   display: flex;

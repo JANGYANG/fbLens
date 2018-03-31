@@ -3,17 +3,16 @@
     <h1 style="font-weight:100;">Join Football Lens!</h1>
     <input-field color="white" label="email" v-model="userSignUp.email"></input-field>
     <input-field color="white" type="password" label="password" v-model="userSignUp.password"></input-field>
-    <input-field color="white" type="password" label="password_confirm" :class="{check: checkPw(userSignUp.password, passwordConfirm)}" v-model="passwordConfirm"></input-field>
+    <input-field :color="checkPw ? 'white' : 'red'" type="password" label="password_confirm" v-model="passwordConfirm"></input-field>
     <input-field color="white" label="name" v-model="userSignUp.userName"></input-field>
     <input-field color="white" label="phone_number" v-model="userSignUp.phoneNum"></input-field>
-    <button class="sign-btn" @click="signUp()">Sign UP</button>
-    {{userSignUp}}
+    <button class="sign-btn" @click="signUp(userSignUp)">Sign UP</button>
   </div>
 </template>
 
 <script>
 import inputField from "~/components/UI/form/input-field.vue"
-
+import axios from "axios"
 export default {
   data () {
     return {
@@ -21,27 +20,40 @@ export default {
       passwordConfirm: ''
     }
   },
-  methods : {
-    checkForm () {
-      if (this.checkPw(this.userSignUp.password == this.passwordConfirm)){
+  computed : {
+    checkPw () {
+      if (this.userSignUp.password == this.passwordConfirm) {
         return true
       }else {
         return false
       }
     },
-    signUp () {
-      console.log(this.checkPw())
-      if (this.checkForm()){
-
+    checkForm() {
+      let form = false
+      if ( this.userSignUp.email && this.userSignUp.password && this.userSignUp.userName && this.userSignUp.phoneNum ){
+        if (this.checkPw) {
+          form = true
+        }
+      }
+      return form
+    }
+  },
+  methods : {
+    signUp (userSignUp) {
+      if (this.checkForm){
+        this.$store.commit('loading', true)
+        console.log(userSignUp)
+        // axios.post("http://www.fblens.com/api/UserLoginServlet", JSON.stringify(userSignUp))
+        axios.post("http://localhost:8080/api/SignUpUser", JSON.stringify(userSignUp))
+        .then((res) => {
+          this.userSignUp = ''
+          this.passwordConfirm = ''
+          this.$store.commit('loading', false)
+          this.$emit('changeBox')
+          alert("SignUp Success")
+        })
       }else {
         alert("check your form")
-      }
-    },
-    checkPw(password, passwordConfirm) {
-      if (password == passwordConfirm) {
-        return false
-      }else {
-        return true
       }
     }
   },
@@ -66,7 +78,6 @@ export default {
   background: inherit;
   color: white;
   border: 1px solid #FFFF;
-  width:90%;
   margin-top: 20px;
   padding: 10px 0px;
   outline: none;

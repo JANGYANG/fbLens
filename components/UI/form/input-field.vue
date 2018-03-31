@@ -1,7 +1,8 @@
 <template>
   <div class="input-box" :style="styleObj" :class="{active: isFocus}">
     <label :style="{color: color}" class="input-label" :class="{labelUp: labelUp(this)}" :for="_uid + 'input-box'">{{ label }}</label>
-    <input :style="{color: color}" :id="_uid+'input-box'" class="input-form" :type="type" @focus="isFocus=true" @blur="isFocus=false" @input="v => this.cValue = v.target.value" @change="v => this.cValue = v.target.value">
+    <!-- <input :style="{color: color}" :id="_uid+'input-box'" class="input-form" :type="type" @focus="isFocus=true" @blur="isFocus=false" @input="v => this.cValue = v.target.value" @change="v => this.cValue = v.target.value"> -->
+    <input :style="{color: color}" :id="_uid+'input-box'" class="input-form" :type="type" @focus="isFocus=true" @blur="isFocus=false" v-model="cValue">
   </div>
 </template>
 <script>
@@ -52,7 +53,7 @@ export default {
     color: {
       type: String,
       defulat () {
-        return '#0000'
+        return '#FFFF'
       }
     }
   },
@@ -78,7 +79,7 @@ export default {
   --color: #FFFF;
   margin: 10px 10px;
   position: relative;
-  width: 80%;
+  width: 100%;
   border-bottom: 1px solid #ccc;
   &::after {
     content: '';

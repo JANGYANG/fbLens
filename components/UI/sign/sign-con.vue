@@ -14,7 +14,7 @@
 
 
     <sign-in-box v-if="signInSgn"></sign-in-box>
-    <sign-up-box v-else></sign-up-box>
+    <sign-up-box v-else v-on:changeBox="signInSgn = !signInSgn"></sign-up-box>
 
   </div>
   
@@ -52,6 +52,7 @@ export default {
   transform-origin: 1 0;
   height: 0%;
   transition: all .3s ease-in-out;
+  padding: 0px 10px;
 }
 .sign-con.activate{
   border-left: #FFFF 1px solid;
@@ -67,7 +68,7 @@ export default {
 }
 .sign-select-con {
   position: relative;
-  width: 90%;
+  width: 100%;
   padding: 0px 0px;
 }
 .sign-select-box{

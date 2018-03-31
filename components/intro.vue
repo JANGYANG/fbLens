@@ -56,9 +56,9 @@ export default {
     }
   },
   watch: {
-    swiperIndex : function (val) {
-      console.log(val)
-    }
+    // swiperIndex : function (val) {
+      // console.log(val)
+    // }
   },
   mounted () {
     var mySwiper = new Swiper ('.swiper-container', {
@@ -79,10 +79,10 @@ export default {
       },
     })
     var swiperIndex = this.swiperIndex
-    console.log(swiperIndex)
+    // console.log(swiperIndex)
     var self = this
     mySwiper.on('slideChange', function () {
-      console.log(this.activeIndex)
+      // console.log(this.activeIndex)
       self.swiperIndex = this.activeIndex
     })
   }
