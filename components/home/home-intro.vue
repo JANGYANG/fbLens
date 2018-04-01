@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide" style="background-color:red;">Slide 3</div>
+      <div class="swiper-slide">Slide 3</div>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>

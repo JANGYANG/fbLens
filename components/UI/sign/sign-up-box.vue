@@ -1,11 +1,11 @@
 <template>
    <div class="sign-box">
     <h1 style="font-weight:100;">Join Football Lens!</h1>
-    <input-field color="white" label="email" v-model="userSignUp.email"></input-field>
+    <input-field color="white" label="email" type="email" v-model="userSignUp.email"></input-field>
     <input-field color="white" type="password" label="password" v-model="userSignUp.password"></input-field>
     <input-field :color="checkPw ? 'white' : 'red'" type="password" label="password_confirm" v-model="passwordConfirm"></input-field>
     <input-field color="white" label="name" v-model="userSignUp.userName"></input-field>
-    <input-field color="white" label="phone_number" v-model="userSignUp.phoneNum"></input-field>
+    <input-field color="white" type="tel" label="phone_number" v-model="userSignUp.phoneNum"></input-field>
     <button class="sign-btn" @click="signUp(userSignUp)">Sign UP</button>
   </div>
 </template>

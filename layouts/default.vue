@@ -46,7 +46,8 @@ export default {
   computed: {
     loading: {
       get () {
-        return this.$store.getters.loading
+        // return true
+        return this.$store.state.loading
       }
     }
   },
@@ -62,7 +63,7 @@ export default {
   },
   methods: {
     login(userLog) {
-      this.loading = true
+      this.$store.state.loading = true
       console.log(userLog)
       // axios.post("http://www.fblens.com/api/UserLoginServlet", JSON.stringify(userLog))
       axios.post("http://www.fblens.com/api/Login", JSON.stringify(userLog))

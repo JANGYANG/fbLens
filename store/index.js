@@ -18,23 +18,9 @@ const vuexSession = new persist({
 
 export default () => new Vuex.Store({
   state: {
-    loading: false,
+    loading: false
   },
   mutations: {
-    setup (state, user) {
-      console.log(user.teamUID)
-      state.user.userUID = user.userUID
-      state.user.teamUID = user.teamUID
-      state.user.login = true
-    },
-    signUp (state, user) {
-
-    },
-    signOut (state) {
-      state.user.login = false
-      state.user.userUID = ''
-      state.user.teamUID = ''
-    },
     loading (state, loadingState) {
       state.loading = loadingState
     },

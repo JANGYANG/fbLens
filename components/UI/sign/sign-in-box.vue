@@ -56,7 +56,11 @@ export default {
         // this.$refs['modal'].$emit('modalChange', false)
         this.$store.commit('loading', false)
         alert(res.data.userName + "님 환영합니다!")
-        this.$store.commit('sessionStorage/signIn', res.data)
+        if (this.checked){
+          this.$store.commit('localStorage/signIn', res.data)
+        }else{
+          this.$store.commit('sessionStorage/signIn', res.data)
+        }
       })
     },
     tst () {

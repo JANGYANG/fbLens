@@ -1,8 +1,13 @@
 <template>
 <div class="left-bar-con" >
   <div class="left-bar">
-    <img  v-if="user" class="profileImg" src="~~/assets/img/12-30-2.jpg">
-    <img v-else src="/mypage.svg" style="width:15px;">
+    <div class="profile-con" v-if="$store.getters['sessionStorage/jwt']">
+      <img class="profileImg" src="~~/assets/img/12-30-2.jpg">
+      <button class="btn" @click="signOut()">SignOut</button>
+    </div>
+    <div v-else>
+      <img  src="/mypage.svg" style="width:15px;">
+    </div>
     <!-- <button v-else id="show-modal" @click="$emit('showLoginModal')">LOGIN</button> -->
     <div class="my-page-title">
         <h5>My PAGE</h5>
@@ -41,9 +46,6 @@ export default {
     })
   },
   computed: {
-    user () {
-      return this.$store.state.login
-    }
   },
   methods: {
     login(userLog) {
@@ -62,6 +64,12 @@ export default {
         this.$store.commit('setup', {userUID: this.userUID, teamUID: res.data.teamUID})
         console.log(res.data)
       })
+    },
+    signOut (){
+      console.log(this.$store.dispatch)
+      // this.$store.dispatch('sessionStorage/signOut')
+      this.$store.commit('localStorage/signIn', {jwt: ''})
+      this.$store.commit('sessionStorage/signIn', {jwt: ''})
     }
   },
   components : {
@@ -103,10 +111,20 @@ export default {
   align-items: center;
   background-color: #E4F1FD;
 }
+.profile-con{
+  display: flex;
+  flex-direction: column;
+}
 .profileImg {
-  width: 80px;
-  height: 80px;
+  width: 100%;
   opacity: 0.5;
+}
+.profile-con .btn{
+  margin-top: 10px;
+  color: #297FC9;
+  background: none;
+  border-radius: 0;
+  border: 1px solid #297FC9;
 }
 .my-page-title {
   flex-grow: 3;

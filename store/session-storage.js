@@ -10,8 +10,26 @@ const sessionStorage = {
     mutations : {
         signIn (state, obj) {
             state.jwt = obj.jwt
-            state.user.userUID = obj.userUID
-            state.user.teamUID = obj.teamUID
+        },
+        setJwt (state, jwt) {
+            state.jwt = jwt
+        }
+    },
+    actions : {
+        signOut ({state, commit, rootState}) {
+ 
+        }
+    },
+    getters: {
+        jwt (state, getters, rootState) {
+            if (rootState.localStorage.jwt){
+                state.jwt = rootState.localStorage.jwt
+                return true
+            }else if(state.jwt){
+                return true
+            }else{
+                return false
+            }
         }
     }
 }
