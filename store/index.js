@@ -7,12 +7,12 @@ import sessionStorage from './session-storage'
 Vue.use(Vuex)
 
 const vuexLocal = new persist({
-  storage: window.localStorage,
+  storage: window ? window.localStorage : null,
   modules: ['localStorage'] //only save user module
 })
 
 const vuexSession = new persist({
-  storage: window.sessionStorage,
+  storage: window ? window.sessionStorage : null,
   modules: ['sessionStorage'] //only save user module
 })
 
